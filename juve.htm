@@ -5,6 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juve Merda Counter</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,10 +36,13 @@
 
 <div id="output"></div>
 
+<img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Left Image">
+<img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Right Image">
+
 <script>
     function stampaNumeri() {
         var outputDiv = document.getElementById("output");
-        outputDiv.innerHTML = "";  // Pulisce l'output precedente
+        outputDiv.innerHTML = "";  
 
         for (let i = 1; i <= 100; i++) {
             outputDiv.innerHTML += "juve merda " + i + "<br>";
