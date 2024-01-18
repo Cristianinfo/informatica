@@ -4,25 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stampa Numeri</title>
+  <style>
+    body {
+      background-color: #333;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+
+    .number {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .number.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
   <script>
     function stampaNumeri() {
       var numeroInput = document.getElementById("numeroInput").value;
       var output = document.getElementById("output");
 
-  
       output.innerHTML = "";
 
-     
       for (var i = 1; i <= numeroInput; i++) {
-        output.innerHTML += i + "<br>";
+        var numberElement = document.createElement("div");
+        numberElement.classList.add("number");
+        numberElement.innerText = i;
+        output.appendChild(numberElement);
+
+        // Aggiungi la classe "animate" per attivare l'animazione
+        setTimeout(function(element) {
+          element.classList.add("animate");
+        }, i * 100, numberElement); // Aggiunge un ritardo crescente per l'effetto sequenziale
       }
 
-    
       var dieciPercento = numeroInput * 0.1;
       output.innerHTML += "<br>10% del numero in input: " + dieciPercento;
-e
-      var img = document.createElement("https://i.gifer.com/7Uw.gif");
-      img.src = "https://i.gifer.com/7Uw.gif"; // Sostituisci con l'URL dell'immagine desiderata
+
+      var img = document.createElement("img");
+      img.src = "https://i.gifer.com/7Uw.gif";
       img.alt = "bravo hai finito";
       output.appendChild(img);
     }
@@ -36,3 +71,4 @@ e
   <div id="output"></div>
 </body>
 </html>
+
