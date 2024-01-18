@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore e Tabellina</title>
+</head>
+<body>
+
+<p id="contatoreVisualizzato"></p>
+
+<script>
+    let contatore = 1;
+
+    function stampaTabellina() {
+        for (let i = 1; i <= 10; i++) {
+            document.write(i + "<br>");
+        }
+    }
+
+    function avviaContatore() {
+        let intervallo = setInterval(function () {
+            document.getElementById("contatoreVisualizzato").innerHTML = "Contatore: " + contatore;
+            console.log(contatore);
+            if (contatore === 5) {
+                clearInterval(intervallo); // Ferma il contatore
+                stampaTabellina();
+            }
+            contatore++;
+        }, 1000); // Ogni 1000 ms (1 secondo)
+    }
+
+    avviaContatore();
+</script>
+
+</body>
+</html>
