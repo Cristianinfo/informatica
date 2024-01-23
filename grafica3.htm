@@ -1,120 +1,53 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scacchiera da Scacchi siddi</title>
+    <title>Quadrati Numeri grafica3 siddi</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .scacchiera {
-            display: grid;
-            grid-template-columns: repeat(8, 90px);
-            grid-template-rows: repeat(8, 90px);
+            text-align: center;
         }
 
         .quadrato {
-            width: 90px;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5em;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin: 2px;
         }
 
-        .bianco {
-            background-color: #fff;
+        .pari {
+            background-color: lightgray;
+            border: 1px solid black;
         }
 
-        .nero {
-            background-color: #000;
-            color: #fff;
+        .dispari {
+            background-color: darkgray;
+            border: 1px solid black;
         }
     </style>
 </head>
 <body>
-    <div class="scacchiera">
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
 
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
+<script>
+    for (let i = 1; i <= 100; i++) {
+        creaQuadrato(i);
+    }
 
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
+    function creaQuadrato(numero) {
+        var contenitore = document.body;
+        var quadrato = document.createElement("div");
 
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
+        quadrato.className = "quadrato " + (numero % 2 === 0 ? "pari" : "dispari");
 
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
+        contenitore.appendChild(quadrato);
 
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
+        if (numero % 10 === 0) {
+           
+            contenitore.appendChild(document.createElement("br"));
+        }
+    }
+</script>
 
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-        <div class="quadrato nero"></div>
-        <div class="quadrato bianco"></div>
-
-
-        
-
-    </div>
 </body>
 </html>
