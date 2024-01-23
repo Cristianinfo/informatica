@@ -10,6 +10,8 @@
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         header {
@@ -39,13 +41,14 @@
 
         h2 {
             color: red;
+            font-size: 24px;
         }
 
         img {
-            width: 300px;
-            height: 300px;
+            max-width: 100%; /* Make images responsive */
+            height: auto;
             margin: 10px;
-            opacity: 0; /* Inizialmente nascosto */
+            opacity: 0; /* Initially hidden */
             transition: opacity 1s ease-in-out;
         }
 
@@ -54,12 +57,15 @@
         }
 
         button {
-            background-color: #8b0000; /* Rosso scuro */
+            background-color: #8b0000;
             color: white;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 20px;
             cursor: pointer;
             margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #proponiamoSection {
@@ -76,16 +82,66 @@
         }
 
         #proponiamoImg {
-            width: 200px; /* Dimensioni dell'immagine */
-            height: 200px;
+            width: 250px;
+            height: 250px;
             margin-left: 10px;
-            opacity: 1; /* Mostrato inizialmente */
+            opacity: 1;
         }
 
         #ignazioText {
             color: white;
             font-size: 24px;
             margin-left: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            #proponiamoImg {
+                width: 100%;
+            }
+
+            #ignazioText {
+                margin-left: 0;
+            }
+        }
+
+        @media only screen and (min-width: 1920px) {
+            h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            button {
+                padding: 20px 40px;
+                font-size: 24px;
+            }
+
+            #proponiamoText {
+                font-size: 48px;
+            }
+
+            #proponiamoImg {
+                width: 300px;
+                height: 300px;
+            }
+
+            #ignazioText {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
@@ -110,11 +166,11 @@
 
 <script>
     function mostraMascotte() {
-        // Nascondi il testo e mostra le immagini delle mascotte
+        // Hide the text and show the mascot images
         document.querySelector("#mascotteSection .mascotteText").style.opacity = 0;
         document.getElementById("img1").style.opacity = 1;
         document.getElementById("img2").style.opacity = 1;
-        // Nascondi il bottone
+        // Hide the button
         document.querySelector("#mascotteSection button").style.display = "none";
     }
 </script>
