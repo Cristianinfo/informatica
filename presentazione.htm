@@ -37,10 +37,49 @@
             margin: 20px 0;
         }
 
+        h2 {
+            color: red;
+        }
+
         img {
             width: 300px;
             height: 300px;
             margin: 10px;
+            opacity: 0; /* Inizialmente nascosto */
+            transition: opacity 1s ease-in-out;
+        }
+
+        .mascotteText {
+            opacity: 1;
+        }
+
+        button {
+            background-color: #8b0000; /* Rosso scuro */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #proponiamoSection {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #proponiamoText {
+            color: red;
+            font-size: 24px;
+        }
+
+        #proponiamoImg {
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            opacity: 1; /* Mostrato inizialmente */
         }
     </style>
 </head>
@@ -50,26 +89,34 @@
     <h1>Presentazione Siddi</h1>
 </header>
 
-<section>
+<section id="introduzione">
     <h2>Introduzione</h2>
     <p>BENVENUTI RAGAAA NEL SITO PIÙ IMPORTANTE DI SEMPRE 🥰🥰 🤩.</p>
 </section>
 
-<section>
+<section id="mascotteSection">
     <h2>Le nostre mascotte 😍</h2>
-    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc33b046-d405-42c8-bade-99321524eb9e/dfum6z3-8596b648-0d07-4583-933f-aee14eaa452c.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JjMzNiMDQ2LWQ0MDUtNDJjOC1iYWRlLTk5MzIxNTI0ZWI5ZVwvZGZ1bTZ6My04NTk2YjY0OC0wZDA3LTQ1ODMtOTMzZi1hZWUxNGVhYTQ1MmMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xLbKeTepjFtMc3xjTA6f7YwET_TPO91CD31FsdmtjQY" alt="mascotte del team">
-    <img src="https://media.tenor.com/z7vnUgjdTGIAAAAM/toothless-dance.gif" alt="Toothless Dance">
+    <p class="mascotteText">Scopri le nostre mascotte cliccando sul bottone qui sotto!</p>
+    <img id="img1" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc33b046-d405-42c8-bade-99321524eb9e/dfum6z3-8596b648-0d07-4583-933f-aee14eaa452c.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JjMzNiMDQ2LWQ0MDUtNDJjOC1iYWRlLTk5MzIxNTI0ZWI5ZVwvZGZ1bTZ6My04NTk2YjY0OC0wZDA3LTQ1ODMtOTMzZi1hZWUxNGVhYTQ1MmMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xLbKeTepjFtMc3xjTA6f7YwET_TPO91CD31FsdmtjQY" alt="mascotte del team">
+    <img id="img2" src="https://media.tenor.com/z7vnUgjdTGIAAAAM/toothless-dance.gif" alt="Toothless Dance">
+    <button onclick="mostraMascotte()">Clicca qui per vedere</button>
 </section>
 
-<section>
-    <h2>Grafici</h2>
-    <!-- Inserisci i tuoi dati per i grafici o incorpora un plugin/chart library -->
-    <!-- Esempio: <canvas id="grafico1"></canvas> -->
-</section>
+<script>
+    function mostraMascotte() {
+        // Nascondi il testo e mostra le immagini delle mascotte
+        document.querySelector("#mascotteSection .mascotteText").style.opacity = 0;
+        document.getElementById("img1").style.opacity = 1;
+        document.getElementById("img2").style.opacity = 1;
+        // Nascondi il bottone
+        document.querySelector("#mascotteSection button").style.display = "none";
+    }
+</script>
 
-<footer>
-    <p>Per ulteriori informazioni, visita il nostro sito: <a href="http://www.esempio.com">www.esempio.com</a></p>
-</footer>
+<section id="proponiamoSection">
+    <h2 id="proponiamoText">COSA PROPONIAMO?</h2>
+    <img id="proponiamoImg" src="https://gifdb.com/images/high/the-rock-dwayne-johnson-wink-lg7wqbt57agtv8s6.gif" alt="Icona Proponiamo">
+</section>
 
 </body>
 </html>
