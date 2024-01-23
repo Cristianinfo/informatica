@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/fe/e9/8e/fee98e6cc39b71021bc63363b4312efe.gif');
+            background-size: cover; 
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .square {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            margin: 15px;
+            display: inline-block;
+        }
+
+        label, input, button {
+            margin: 10px;
+        }
+    </style>
+    <title>Generatore</title>
+</head>
+<body>
+    <label for="numeroDiv">Inserisci un numero:</label>
+    <input type="number" id="numeroDiv" min="1" value="1">
+    <button onclick="creaDiv()">Genera numero</button>
+
+    <script>
+        function creaDiv() {
+            var numeroDiv = document.getElementById("numeroDiv").value;
+            var container = document.body;
+            container.innerHTML = "";
+            for (var i = 0; i < numeroDiv; i++) {
+                var div = document.createElement("div");
+                div.className = "square";
+                div.style.backgroundColor = getRandomColor();
+                container.appendChild(div);
+            }
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
