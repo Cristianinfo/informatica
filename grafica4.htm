@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrati Numeri grafica4 siddi</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .quadrato {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .pari {
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+
+        .dispari {
+            background-color: darkgray;
+            border: 1px solid black;
+        }
+
+        .quadrato img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    for (let i = 1; i <= 100; i++) {
+        creaQuadrato(i);
+    }
+
+    function creaQuadrato(numero) {
+        var contenitore = document.body;
+        var quadrato = document.createElement("div");
+
+        quadrato.className = "quadrato " + (numero % 2 === 0 ? "pari" : "dispari");
+
+        var img = document.createElement("img");
+        var randomNum = Math.floor(Math.random() * 3); 
+        
+        if (randomNum === 0) {
+            img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-oQe-jEWBKeAuq1o4tqaWq6662JfNwQQYlQ&usqp=CAU"; // Sostituisci con il link all'immagine desiderata
+        } else if (randomNum === 1) {
+            img.src = "https://yt3.googleusercontent.com/iS4s7aVX6HgkR-CeVwiwA6YBdUdPFsZXmXLXSCvujk6OfYLkkFe9QKLw53nenELtGpbaJlcA_6Y=s900-c-k-c0x00ffffff-no-rj"; // Sostituisci con il link all'immagine desiderata
+        } else {
+            img.src = "https://preview.redd.it/sono-gilbert-nana-v0-kilqdeqdtujb1.jpg?width=640&crop=smart&auto=webp&s=3787c2532c171d1fc7bbe65c34a6a55a3246f4dc"; // Sostituisci con il link all'immagine desiderata
+        }
+        
+        quadrato.appendChild(img);
+        contenitore.appendChild(quadrato);
+
+        if (numero % 10 === 0) {
+            contenitore.appendChild(document.createElement("br"));
+        }
+    }
+</script>
+
+</body>
+</html>
