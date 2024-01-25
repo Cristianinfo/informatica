@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juve Merda Counter</title>
     <style>
@@ -12,10 +11,6 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
         }
 
@@ -28,6 +23,22 @@
             height: auto;
             margin: 0 10px;
         }
+
+        button {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 45%;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
@@ -36,8 +47,10 @@
 
 <div id="output"></div>
 
-<img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Left Image">
-<img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Right Image">
+<div class="image-container">
+    <img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Left Image">
+    <img src="https://media1.giphy.com/media/l5e267jyFiWFG/giphy.gif?cid=6c09b952jufzbi8w05zlhk7t2z5r2zgo39u4yg3fupy426ta&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Right Image">
+</div>
 
 <script>
     function stampaNumeri() {
