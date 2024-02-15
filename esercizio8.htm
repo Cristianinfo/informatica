@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Calcolatore IMC</h2>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="any">
+        <label for="altezza">Altezza (m):</label>
+        <input type="number" id="altezza" step="any">
+        <button onclick="calcolaIMC()">Calcola IMC</button>
+        <div id="risultato"></div>
+    </div>
+
+    <script>
+        function calcolaIMC() {
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altezza = parseFloat(document.getElementById('altezza').value);
+
+            if (isNaN(peso) || isNaN(altezza) || peso <= 0 || altezza <= 0) {
+                alert('Inserisci un peso e un\'altezza validi.');
+                return;
+            }
+
+            var imc = peso / (altezza * altezza);
+            var classificazione = "";
+
+            if (imc < 18.5) {
+                classificazione = "Sottopeso";
+            } else if (imc < 25) {
+                classificazione = "Normopeso";
+            } else if (imc < 30) {
+                classificazione = "Sovrappeso";
+            } else {
+                classificazione = "Obesità";
+            }
+
+            var risultatoDiv = document.getElementById('risultato');
+            risultatoDiv.innerHTML = "<p>Il tuo IMC è: " + imc.toFixed(2) + "</p>";
+            risultatoDiv.innerHTML += "<p>Classificazione del peso: " + classificazione + "</p>";
+        }
+    </script>
+</body>
+</html>
