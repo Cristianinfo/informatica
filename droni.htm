@@ -9,23 +9,39 @@
 <!-- Custom CSS -->
 <style>
     body {
-        background-image: url('https://besthqwallpapers.com/Uploads/5-12-2020/148569/4k-green-camouflage-summer-camouflage-military-camouflage-green-camouflage-background.jpg');
+        background-image: url('https://images5.alphacoders.com/792/792679.jpg');
         background-size: cover;
     }
     .navbar {
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/141113-A-QS211-509_-_Soldiers_of_the_1st_Brigade_Combat_Team%2C_1st_Cavalry_Division%2C_and_2nd_Cavalry_Regiment_participate_in_the_closing_ceremony_for_Iron_Sword_2014.jpg');
+        background-image: url('https://wallpapers.com/images/hd/fast-and-furious-1970-dodge-charger-lmk81um1c4r1tnyd.jpgg');
         background-size: cover;
     }
     .card {
-        width: 20rem;
-        height: auto;
+        width: 40rem; /* Imposta la larghezza delle card */
+        height: 300px;
+        margin-bottom: 20px;
     }
     h1 {
         color: white;
         animation: fadeIn 2s forwards;
+        font-size: 3rem;
+        font-style: italic;
+        -webkit-text-stroke: 2px darkred;
+        text-stroke: 2px darkred;
+        padding: 10px;
     }
     .lead {
         color: white;
+    }
+    .row:nth-child(odd) {
+        background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d9');
+        background-size: cover;
+        padding: 20px;
+    }
+    .row:nth-child(even) {
+        background-image: url('https://images.unsplash.com/photo-1516513463328-f6f88d0ebd6d');
+        background-size: cover;
+        padding: 20px;
     }
     @keyframes fadeIn {
         from {
@@ -57,7 +73,7 @@
 </nav>
 
 <div class="container my-5 text-center" style="max-width: 600px;">
-    <h1>DRONI MILITARI </h1>
+    <h1>Fast and Furious</h1>
     <p class="lead">droni militari</p>
     <button type="button" class="btn btn-primary">DRONI INFORMAZIONI</button>
     <button type="button" class="btn btn-secondary">compralo subito</button>
@@ -65,28 +81,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-              <iframe width="288" height="200" src="https://www.youtube.com/embed/jrlxLEiYplE?si=-DXjT0SxMwqVfq1r&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="col-sm d-flex justify-content-around">
+            <div class="card">
+                <iframe width="288" height="200" src="https://www.youtube.com/embed/jrlxLEiYplE?si=-DXjT0SxMwqVfq1r&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="card-body">
                     <h5 class="card-title">Predator</h5>
                     <p class="card-text">tipologia Medium altitude, long endurance; apertura alare 14,8 metri, lunghezza 8,2 metri; Funzione: ricognizione; Carico Utile: 204 kg</p>
                     <a href="#" class="btn btn-primary">COMPRALO</a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/gpOfcchmYGE?si=nV0bA8EWYDozk8XO&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="card">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gpOfcchmYGE?si=nV0bA8EWYDozk8XO&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div class="card-body">
                     <h5 class="card-title">Reaper</h5>
                     <p class="card-text">tipologia Medium altitude, long endurance; apertura alare 20,1 metri, lunghezza 10,8 metri; Funzione: ricognizione e attacco; Carico Utile: 1400 kg</p>
                     <a href="#" class="btn btn-primary">COMPRALO</a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVe_mYvkRnFx5SNBl5J3Q5C2E2pbAhDd8POSTFapi-Ij2nATo7s3-ZdtP4Cv3HBX5fIAg&usqp=CAU" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">il sushi DI piazza bengasi</h5>
@@ -96,12 +108,9 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="container">
     <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+        <div class="col-sm d-flex justify-content-around">
+            <div class="card">
                 <img src="https://i.ytimg.com/vi/zQtGvz6W3kQ/maxresdefault.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">il sushi dell osservatore...</h5>
@@ -109,15 +118,16 @@
                     <a href="#" class="btn btn-primary">Osserva e compra</a>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img src="https://media.tenor.com/1o8Yb6XHTk4AAAAM/logitech-mewing.gif" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">sushi per mandibboloni belli grossi</h5>
                     <p class="card-text">sei un vero UOMO ? se la tua risposta è si beh ho per te il sushi per veri uomini</p>
                     <a href="#" class="btn btn-primary">clicca UOMO</a>
                 </div>
+            </div>
+            <div class="card">
+                <!-- Aggiungi qui il contenuto della prossima card -->
             </div>
         </div>
     </div>
