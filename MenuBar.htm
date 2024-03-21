@@ -69,12 +69,14 @@
 
         // Funzione per eliminare un drink dall'array drinks
         function deleteElement() {
-            let index = prompt("Inserisci l'indice del drink da eliminare:");
-            if (index && index >= 0 && index < drinks.length) {
+            let drinkName = prompt("Inserisci il nome del drink da eliminare:");
+            let index = drinks.indexOf(drinkName);
+            if (index !== -1) {
                 drinks.splice(index, 1);
                 displayDrinks();
+                displayOutput(drinkName + " è stato eliminato.");
             } else {
-                displayOutput("Indice non valido.");
+                displayOutput("Drink non trovato.");
             }
         }
 
@@ -93,4 +95,3 @@
    
 </body>
 </html>
-
