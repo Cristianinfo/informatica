@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array1</title>
+    <style>
+        body {
+            background-color: black; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+        }
+        button {
+            background-color: white; 
+            color: black; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            margin: 5px;
+            font-size: 16px; 
+        }
+        button:hover {
+            background-color: #ddd; 
+        }
+    </style>
+</head>
+<body>
+ 
+    <p id="out"></p>
+    <div>
+        <button id="countButton" onclick="countElements()">Conta elementi</button>
+        <button id="addButton" onclick="addOrder()">Ordina un prodotto</button>
+        <button id="deleteButton" onclick="deleteElement()">Elimina</button>
+        <button id="buyButton" onclick="buy()">Compra</button>
+        <p id="fruitsOut"></p>
+    </div>
+
+    <script>
+        let drinks = ["Coca-Cola", "Sprite", "Fanta", "Water", "Beer"]; // Array di drink
+        let orders = []; // Array degli ordini
+
+        // Funzione per visualizzare un messaggio di output
+        function displayOutput(message) {
+            document.getElementById("out").innerHTML = message;
+        }
+
+        // Funzione per visualizzare gli elementi dell'array drinks
+        function displayDrinks() {
+            document.getElementById("fruitsOut").innerHTML = drinks.join(", ");
+        }
+
+        // Funzione per contare gli elementi nell'array drinks
+        function countElements() {
+            displayOutput("Numero di drink: " + drinks.length);
+        }
+
+        // Funzione per aggiungere un drink all'ordine
+        function addOrder() {
+            let drinkName = prompt("Inserisci il nome del drink da ordinare:");
+            let index = drinks.indexOf(drinkName);
+            if (index !== -1) {
+                orders.push(index);
+                displayOutput("Hai aggiunto " + drinkName + " all'ordine.");
+            } else {
+                displayOutput("Drink non trovato.");
+            }
+        }
+
+        // Funzione per eliminare un drink dall'array drinks
+        function deleteElement() {
+            let index = prompt("Inserisci l'indice del drink da eliminare:");
+            if (index && index >= 0 && index < drinks.length) {
+                drinks.splice(index, 1);
+                displayDrinks();
+            } else {
+                displayOutput("Indice non valido.");
+            }
+        }
+
+        // Funzione per comprare i drink ordinati
+        function buy() {
+            if (orders.length === 0) {
+                displayOutput("Nessun ordine da comprare.");
+            } else {
+                let orderedDrinks = orders.map(index => drinks[index]);
+                displayOutput("Drink ordinati: " + orderedDrinks.join(", "));
+            }
+        }
+
+        displayDrinks(); // Mostra inizialmente i drink disponibili
+    </script>
+   
+</body>
+</html>
+
