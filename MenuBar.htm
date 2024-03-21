@@ -37,15 +37,15 @@
     </div>
 
     <script>
-        let drinks = ["Coca-Cola", "Sprite", "Fanta", "Water", "Beer"]; // Array di drink
-        let orders = []; 
+        let drinks = ["Coca-Cola", "Sprite", "Fanta", "Water", "Beer"]; 
+        let orders = []; i
 
         
         function displayOutput(message) {
             document.getElementById("out").innerHTML = message;
         }
 
-      
+       
         function displayDrinks() {
             document.getElementById("fruitsOut").innerHTML = drinks.join(", ");
         }
@@ -55,7 +55,7 @@
             displayOutput("Numero di drink: " + drinks.length);
         }
 
-        
+       
         function addOrder() {
             let drinkName = prompt("Inserisci il nome del drink da ordinare:");
             let index = drinks.indexOf(drinkName);
@@ -71,7 +71,7 @@
         function deleteElement() {
             let drinkName = prompt("Inserisci il nome del drink da eliminare:");
             drinkName = drinkName.toLowerCase(); 
-            let index = drinks.indexOf(drinkName);
+            let index = drinks.findIndex(drink => drink.toLowerCase() === drinkName);
             if (index !== -1) {
                 drinks.splice(index, 1);
                 displayDrinks();
@@ -81,7 +81,7 @@
             }
         }
 
-       
+        
         function buy() {
             if (orders.length === 0) {
                 displayOutput("Nessun ordine da comprare.");
@@ -96,4 +96,3 @@
    
 </body>
 </html>
-
