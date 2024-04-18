@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodifica Codice Binario</title>
+    <script>
+        // Funzione per contare quanti bit ci sono nel codice binario
+        function countBits(binaryCode) {
+            return binaryCode.length;
+        }
+
+        // Funzione per contare quanti byte ci sono nel codice binario
+        function countBytes(binaryCode) {
+            return Math.floor(binaryCode.length / 8);
+        }
+
+        // Funzione per separare il codice binario in byte
+        function separateBytes(binaryCode) {
+            let bytes = [];
+            for (let i = 0; i < binaryCode.length; i += 8) {
+                bytes.push(binaryCode.substring(i, i + 8));
+            }
+            return bytes;
+        }
+
+        
+        function analyzeByte(byte) {
+
+            return byte;
+        }
+
+      
+        function processInput() {
+            const binaryCode = document.getElementById("binaryCode").value.trim();
+            const bitsCount = countBits(binaryCode);
+            const bytesCount = countBytes(binaryCode);
+            const bytes = separateBytes(binaryCode);
+            
+       
+            document.getElementById("bitsCount").textContent = "Numero di bit: " + bitsCount;
+            document.getElementById("bytesCount").textContent = "Numero di byte: " + bytesCount;
+
+       
+            const bytesList = document.getElementById("bytesList");
+            bytesList.innerHTML = "";
+            bytes.forEach(byte => {
+                const analyzedByte = analyzeByte(byte);
+                const listItem = document.createElement("li");
+                listItem.textContent = analyzedByte;
+                bytesList.appendChild(listItem);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Decodifica Codice Binario</h1>
+    <label for="binaryCode">Inserisci il codice binario:</label><br>
+    <textarea id="binaryCode" rows="4" cols="50"></textarea><br>
+    <button onclick="processInput()">Elabora</button><br><br>
+    <div id="results">
+        <p id="bitsCount"></p>
+        <p id="bytesCount"></p>
+        <ul id="bytesList"></ul>
+    </div>
+</body>
+</html>
