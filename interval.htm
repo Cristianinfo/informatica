@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatore della tabellina del 3</title>
+  <style>
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: lightgray;
+    }
+    #imageContainer {
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="imageContainer" onclick="startCounting()">
+      <img src="https://via.placeholder.com/150?text=3" alt="Numero 3" />
+    </div>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    let interval;
+    let count = 1;
+
+    function startCounting() {
+      if (!interval) {
+        interval = setInterval(() => {
+          document.getElementById("output").innerText = 3 * count;
+          count++;
+        }, 1000);
+      }
+    }
+
+    function stopCounting() {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+        count = 1;
+      }
+    }
+  </script>
+</body>
+</html>
