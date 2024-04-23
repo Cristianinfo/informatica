@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipolazione di Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #ddd;
+        }
+        
+        .output {
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Array per memorizzare gli elementi
+        let array = [];
+
+        // Aggiungi elemento tramite prompt
+        function aggiungiElemento() {
+            let elemento = prompt("Inserisci un elemento:");
+            if (elemento) {
+                array.push(elemento);
+                stampaArray();
+            }
+        }
+
+        // Cancella l'ultimo elemento dall'array
+        function cancellaUltimo() {
+            if (array.length > 0) {
+                array.pop();
+                stampaArray();
+            } else {
+                alert("L'array è già vuoto!");
+            }
+        }
+
+        // Conta il numero di elementi nell'array
+        function contaElementi() {
+            alert("Numero di elementi nell'array: " + array.length);
+        }
+
+        // Stampa l'array
+        function stampaArray() {
+            document.getElementById("arrayOutput").textContent = array.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Manipolazione di Array</h1>
+
+    <div class="buttons">
+        <button onclick="aggiungiElemento()">Aggiungi Elemento</button>
+        <button onclick="cancellaUltimo()">Cancella Ultimo Elemento</button>
+        <button onclick="contaElementi()">Conta Elementi</button>
+    </div>
+
+    <div class="output">
+        <h2>Array Corrente</h2>
+        <p id="arrayOutput"></p>
+    </div>
+</body>
+</html>
