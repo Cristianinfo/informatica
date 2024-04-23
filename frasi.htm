@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Generatore di Frasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #ddd;
+        }
+        
+        .output {
+            text-align: center;
+        }
+    </style>
+    <script>
+       
+        let soggetti = [];
+        let verbi = [];
+        let complementi = [];
+
+       
+        function aggiungiSoggetto() {
+            let soggetto = prompt("Inserisci un soggetto:");
+            if (soggetto) {
+                soggetti.push(soggetto);
+                stampaArray("soggetti", soggetti);
+            }
+        }
+
+       
+        function aggiungiVerbo() {
+            let verbo = prompt("Inserisci un verbo:");
+            if (verbo) {
+                verbi.push(verbo);
+                stampaArray("verbi", verbi);
+            }
+        }
+
+        
+        function aggiungiComplemento() {
+            let complemento = prompt("Inserisci un complemento:");
+            if (complemento) {
+                complementi.push(complemento);
+                stampaArray("complementi", complementi);
+            }
+        }
+
+        
+        function stampaArray(id, array) {
+            document.getElementById(id).textContent = array.join(", ");
+        }
+
+       
+        function creaFrase() {
+            if (soggetti.length > 0 && verbi.length > 0 && complementi.length > 0) {
+                let frase = `${soggetti[0]} ${verbi[0]} ${complementi[0]}`;
+                document.getElementById("fraseOutput").textContent = frase;
+            } else {
+                alert("Devi inserire almeno un soggetto, un verbo e un complemento.");
+            }
+        }
+
+    
+        function creaFrasiCasuali() {
+            let frasi = [];
+            if (soggetti.length > 0 && verbi.length > 0 && complementi.length > 0) {
+                for (let soggetto of soggetti) {
+                    for (let verbo of verbi) {
+                        for (let complemento of complementi) {
+                            frasi.push(`${soggetto} ${verbo} ${complemento}`);
+                        }
+                    }
+                }
+                document.getElementById("frasiCasualiOutput").textContent = frasi.join("\n");
+            } else {
+                alert("Devi inserire almeno un soggetto, un verbo e un complemento.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Generatore di Frasi</h1>
+
+    <div class="buttons">
+        <button onclick="aggiungiSoggetto()">Aggiungi Soggetto</button>
+        <button onclick="aggiungiVerbo()">Aggiungi Verbo</button>
+        <button onclick="aggiungiComplemento()">Aggiungi Complemento</button>
+        <button onclick="creaFrase()">Crea Frase</button>
+        <button onclick="creaFrasiCasuali()">Crea Frasi Casuali</button>
+    </div>
+
+    <div class="output">
+        <h2>Soggetti</h2>
+        <p id="soggetti"></p>
+
+        <h2>Verbi</h2>
+        <p id="verbi"></p>
+
+        <h2>Complementi</h2>
+        <p id="complementi"></p>
+
+        <h2>Frase Creata</h2>
+        <p id="fraseOutput"></p>
+
+        <h2>Frasi Casuali</h2>
+        <p id="frasiCasualiOutput"></p>
+    </div>
+</body>
+</html>
