@@ -28,25 +28,23 @@
     <div class="griglia" id="griglia"></div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const randomNumbers = Array.from({ length: 100 }, () => Math.floor(Math.random() * 1000) + 1);
+        const randomNumbers = Array.from({ length: 100 }, () => Math.floor(Math.random() * 1000) + 1);
 
-            const griglia = document.getElementById("griglia");
+        const griglia = document.getElementById("griglia");
 
-            for (let i = 0; i < 100; i++) {
-                const quadrato = document.createElement("div");
-                quadrato.className = "quadrato";
-                quadrato.textContent = randomNumbers[i];
-                
-                if (randomNumbers[i] % 2 === 0) {
-                    quadrato.style.backgroundColor = "red";
-                } else {
-                    quadrato.style.backgroundColor = "lightblue";
-                }
+        for (let i = 0; i < 100; i++) {
+            const quadrato = document.createElement("div");
+            quadrato.className = "quadrato";
+            quadrato.textContent = randomNumbers[i];
 
-                griglia.appendChild(quadrato);
+            if (randomNumbers[i] % 2 === 0) {
+                quadrato.style.backgroundColor = "red";
+            } else {
+                quadrato.style.backgroundColor = "lightblue";
             }
-        });
+
+            griglia.appendChild(quadrato);
+        }
     </script>
 </body>
 </html>
