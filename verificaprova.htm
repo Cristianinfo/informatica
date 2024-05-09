@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadrati Colorati</title>
+    <style>
+        body {
+            background-color: black; 
+            color: white; 
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            margin: 1px;
+        }
+
+        .red-dark {
+            background-color: rgb(139, 4, 4);
+            color: white;
+        }
+
+        .blue-light {
+            background-color: lightblue;
+            color: black;
+        }
+
+        .red-light {
+            background-color: lightcoral;
+            color: black;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        .signature {
+            position: fixed; 
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        function èprimo(n) {
+            if (n < 2) {
+                return false;
+            }
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function createSquares(container) {
+            const startNumber = 1000;
+            const count = 1000;
+
+            const numbers = [];
+            for (let i = 0; i < count; i++) {
+                numbers.push(startNumber + i);
+            }
+
+            for (const number of numbers) {
+                const square = document.createElement('div');
+                square.classList.add('square');
+                square.textContent = number;
+
+                if (èprimo(number)) {
+                    square.classList.add('yellow');
+                } else if (number % 7 === 0) {
+                    square.classList.add('red-light');
+                } else if (number % 2 === 0) {
+                    square.classList.add('red-dark');
+                } else {
+                    square.classList.add('blue-light');
+                }
+
+                container.appendChild(square);
+            }
+        }
+
+        const container = document.getElementById('container');
+        createSquares(container);
+    </script>
+
+    <div class="signature">siddi</div> 
+</body>
+</html>
