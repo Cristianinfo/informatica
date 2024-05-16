@@ -21,25 +21,24 @@
     <div id="container"></div>
 
     <script>
-   
+    
         function randomNumber(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-
+      
         let container = document.getElementById('container');
 
-    
         for (let i = 0; i < 100; i++) {
             let square = document.createElement('div');
             square.className = 'square';
 
-         
-            let randomNumber = randomNumber(1, 1000);
-            square.innerText = randomNumber;
+            
+            let randomNum = randomNumber(1, 1000);
+            square.innerText = randomNum;
 
            
-            if (randomNumber % 2 === 0) {
+            if (randomNum % 2 === 0) {
                 square.style.backgroundColor = 'red'; 
             } else {
                 square.style.backgroundColor = 'lightblue'; 
