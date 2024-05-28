@@ -1,0 +1,45 @@
+esercizio 1
+
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creare Quadrati</title>
+    <style>
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Creare Quadrati</h1>
+    <label for="numberInput">Inserisci un numero:</label>
+    <input type="number" id="numberInput" min="1">
+    <button onclick="createSquares()">Crea Quadrati</button>
+    <div id="squaresContainer"></div>
+
+
+    <script>
+        function createSquares() {
+            const container = document.getElementById('squaresContainer');
+            const n = document.getElementById('numberInput').value;
+            container.innerHTML = '';
+            for (let i = 0; i < n; i++) {
+                const square = document.createElement('div');
+                square.className = 'square';
+                container.appendChild(square);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
